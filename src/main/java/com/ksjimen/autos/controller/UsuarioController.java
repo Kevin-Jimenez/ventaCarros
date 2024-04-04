@@ -24,6 +24,10 @@ public class UsuarioController {
 	@PostMapping(value = "new")
 	public ResponseEntity<ResponseUsuarioDto> agregarUsuario(@RequestBody RequestUsuarioDto requestUsuario){
 		return ResponseEntity.ok(usuService.agregar(requestUsuario));
-		
+	}
+	
+	@PostMapping(value = "edit")
+	public ResponseEntity<ResponseUsuarioDto> actualizarUsuario(@RequestBody RequestUsuarioDto requestUsuario){
+		return ResponseEntity.ok(usuService.actualizar(requestUsuario));
 	}
 }

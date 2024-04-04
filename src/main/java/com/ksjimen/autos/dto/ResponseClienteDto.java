@@ -9,11 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RequestUsuarioDto {
-	private Long idUsuario;
-	private String usuario;
-	private String contrasena;
-	private String nombre;
-	private String apellido;
-	
+public class ResponseClienteDto {
+	private Long idCliene;
+	private String mensaje;
+	private String documento;
+
 }

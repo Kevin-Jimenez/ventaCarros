@@ -1,8 +1,15 @@
 package com.ksjimen.autos.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.ksjimen.autos.dto.VehiculosDTO;
+import com.ksjimen.autos.service.VehiculoService;
 
 import lombok.AllArgsConstructor;
 
@@ -11,9 +18,13 @@ import lombok.AllArgsConstructor;
 @RequestMapping(value = "/api/v1/")
 public class IndexController {
 	
-	@PostMapping
-	public String welcome() {
-		return "Bienvenido al aplicativo Autos Koach";
+	@Autowired
+	private VehiculoService vehiculoService;
+	
+	
+	@GetMapping
+	public ResponseEntity<List<VehiculosDTO>> welcome() {
+		return ResponseEntity.ok(vehiculoService.listar());
 	}
 
 }

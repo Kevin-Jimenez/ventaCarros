@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RequestUsuarioDto {
-	private Long idUsuario;
-	private String usuario;
-	private String contrasena;
+public class RequestClienteDto {
+	private Long idCliente;
+	private String tipoIdentificacion;
+	private String numeroIdentificacion;
 	private String nombre;
 	private String apellido;
-	
 }

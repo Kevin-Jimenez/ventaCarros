@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResponseVehiculoDto {
+	private Long idVehiculo;
 	private String respuesta;
 	private Year modelo;
 }

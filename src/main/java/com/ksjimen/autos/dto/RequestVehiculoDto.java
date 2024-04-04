@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RequestVehiculoDto {
+	private Long idVehiculo;
 	private Long idMarca;
 	private Long idLinea;
 	private Long idTVehiculo;

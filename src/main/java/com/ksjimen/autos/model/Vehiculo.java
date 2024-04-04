@@ -72,5 +72,8 @@ public class Vehiculo {
 	@OneToMany(mappedBy = "vehiculo")
     private List<Venta> ventas;
 	
+	@OneToMany(mappedBy = "vehiculo")
+	private List<ImagenVehiculo> imagenes;
+	
 
 }
