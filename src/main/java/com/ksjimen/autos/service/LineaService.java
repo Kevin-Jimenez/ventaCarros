@@ -1,6 +1,7 @@
 package com.ksjimen.autos.service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,17 @@ public class LineaService {
 		return ResponseLineaDto.builder()
 				.linea(response.getLinea()).marca(marcaV.getMarca())
 				.response("Se agrego la marca de forma correcta.").build();
+	}
+
+	public List<LineaVehiculo> listar() {
+		List<LineaVehiculo> vehiculos = linearepo.findAll();
+		return vehiculos;
+	}
+
+	public Optional<List<LineaVehiculo>> findById(Long idMarca) {
+		Optional<MarcaVehiculo> marca = marcaVehiculo.findById(idMarca);
+		Optional<List<LineaVehiculo>> vehiculos = linearepo.findByIdMarca(marca);
+		return vehiculos;
 	}
 
 }

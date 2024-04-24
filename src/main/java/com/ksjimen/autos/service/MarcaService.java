@@ -1,6 +1,7 @@
 package com.ksjimen.autos.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import com.ksjimen.autos.dto.RequestMarcaDto;
 import com.ksjimen.autos.dto.ResponseMarcaDto;
 import com.ksjimen.autos.model.MarcaVehiculo;
 import com.ksjimen.autos.repository.IMarcaVehiculo;
+import com.ksjimen.autos.repository.IVehiculoRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -35,6 +37,11 @@ public class MarcaService {
 				.marca(response.getMarca())
 				.response("¡Marca Registrada Exitosamente!")
 				.build();
+	}
+
+	public List<MarcaVehiculo> listar() {
+		List<MarcaVehiculo> marcas = IvehiculoMarca.findAll();
+		return marcas;
 	}
 
 }

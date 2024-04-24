@@ -1,6 +1,7 @@
 package com.ksjimen.autos.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,11 @@ public class TipoVService {
 		
 		return ResponseTVehiculoDto.builder()
 				.response(response.getTipo()).build();
+	}
+
+	public List<TipoVehiculo> listar() {
+		List<TipoVehiculo> tipoVehiculos = tVRepository.findAll();
+		return tipoVehiculos;
 	}
 	
 
